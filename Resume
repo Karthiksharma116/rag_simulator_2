@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Karthik Sharma | Futuristic Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+    --bg:#070b14;
+    --card:#101826;
+    --accent:#00e5ff;
+    --accent2:#7b61ff;
+    --text:#f4f7fb;
+    --muted:#9aa8bd;
+    --border:rgba(255,255,255,0.08);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background: radial-gradient(circle at top left,#152238 0%,#070b14 55%);
+    color:var(--text);
+    line-height:1.6;
+    overflow-x:hidden;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:40px 24px;
+}
+
+.hero{
+    display:grid;
+    grid-template-columns:1.3fr 0.7fr;
+    gap:28px;
+    align-items:center;
+    min-height:88vh;
+}
+
+.glass{
+    background:rgba(255,255,255,0.04);
+    border:1px solid var(--border);
+    border-radius:24px;
+    backdrop-filter: blur(12px);
+    box-shadow:0 10px 30px rgba(0,0,0,0.35);
+}
+
+.hero-left{
+    padding:48px;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero-left::before{
+    content:"";
+    position:absolute;
+    width:240px;
+    height:240px;
+    background:linear-gradient(135deg,var(--accent),transparent);
+    border-radius:50%;
+    top:-80px;
+    right:-80px;
+    opacity:0.25;
+}
+
+.badge{
+    display:inline-block;
+    padding:10px 16px;
+    border-radius:999px;
+    border:1px solid rgba(0,229,255,0.35);
+    color:var(--accent);
+    font-size:13px;
+    margin-bottom:18px;
+    letter-spacing:0.5px;
+}
+
+h1{
+    font-size:64px;
+    line-height:1.05;
+    margin-bottom:14px;
+}
+
+.gradient{
+    background:linear-gradient(90deg,var(--accent),#8e8dff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.subtitle{
+    font-size:22px;
+    color:#d6dff0;
+    margin-bottom:22px;
+}
+
+.summary{
+    color:var(--muted);
+    font-size:16px;
+    max-width:700px;
+}
+
+.hero-right{
+    padding:34px;
+}
+
+.card-title{
+    font-size:18px;
+    margin-bottom:18px;
+    color:#dfe8f6;
+}
+
+.info{
+    margin-bottom:16px;
+}
+
+.info small{
+    color:var(--muted);
+    display:block;
+    margin-bottom:4px;
+}
+
+.info strong{
+    font-size:15px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:22px;
+    margin-top:28px;
+}
+
+.section{
+    padding:30px;
+}
+
+.section h2{
+    margin-bottom:20px;
+    font-size:24px;
+}
+
+.timeline{
+    border-left:2px solid rgba(0,229,255,0.2);
+    padding-left:20px;
+}
+
+.timeline-item{
+    margin-bottom:24px;
+    position:relative;
+}
+
+.timeline-item::before{
+    content:"";
+    position:absolute;
+    left:-28px;
+    top:7px;
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:var(--accent);
+    box-shadow:0 0 12px var(--accent);
+}
+
+.timeline-item h3{
+    font-size:18px;
+    margin-bottom:4px;
+}
+
+.timeline-item span{
+    color:var(--muted);
+    font-size:14px;
+}
+
+.timeline-item p{
+    margin-top:10px;
+    color:#d8e1ee;
+    font-size:15px;
+}
+
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.skill{
+    padding:10px 16px;
+    border-radius:999px;
+    background:rgba(123,97,255,0.12);
+    border:1px solid rgba(123,97,255,0.25);
+    color:#e7e3ff;
+    font-size:14px;
+}
+
+.metrics{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+    margin-top:20px;
+}
+
+.metric{
+    padding:20px;
+    text-align:center;
+    border-radius:18px;
+    background:rgba(255,255,255,0.03);
+    border:1px solid var(--border);
+}
+
+.metric h3{
+    font-size:28px;
+    color:var(--accent);
+}
+
+.metric p{
+    color:var(--muted);
+    font-size:13px;
+}
+
+.footer{
+    text-align:center;
+    padding:30px;
+    color:var(--muted);
+    font-size:14px;
+}
+
+button{
+    margin-top:28px;
+    background:linear-gradient(90deg,var(--accent),var(--accent2));
+    border:none;
+    padding:14px 24px;
+    border-radius:12px;
+    color:white;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s ease;
+}
+
+button:hover{
+    transform:translateY(-2px) scale(1.02);
+}
+
+@media(max-width:900px){
+    .hero{
+        grid-template-columns:1fr;
+    }
+
+    h1{
+        font-size:48px;
+    }
+
+    .metrics{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <section class="hero">
+        <div class="hero-left glass">
+            <div class="badge">FUTURE-READY PROFESSIONAL</div>
+
+            <h1>
+                Karthik <span class="gradient">Sharma</span>
+            </h1>
+
+            <div class="subtitle">
+                IT Audit Professional • Product Management Learner • Data & Business Enthusiast
+            </div>
+
+            <p class="summary">
+                Results-driven professional with experience in IT audit, compliance, and business systems analysis across healthcare and payroll environments. Skilled in ITGC testing, SOX controls, SOC frameworks, and stakeholder collaboration. Recently completed advanced product management training from ISB Hyderabad, building a strong blend of analytical thinking, product strategy, and business problem-solving capabilities.
+            </p>
+
+            <button onclick="downloadResume()">Download Resume</button>
+
+            <div class="metrics">
+                <div class="metric">
+                    <h3>1+</h3>
+                    <p>Years Experience</p>
+                </div>
+
+                <div class="metric">
+                    <h3>SOX</h3>
+                    <p>Compliance & Controls</p>
+                </div>
+
+                <div class="metric">
+                    <h3>ISB</h3>
+                    <p>Product Management</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-right glass">
+            <div class="card-title">Professional Snapshot</div>
+
+            <div class="info">
+                <small>Current Focus</small>
+                <strong>IT Audit • Product Thinking • Data Analysis</strong>
+            </div>
+
+            <div class="info">
+                <small>Specialization</small>
+                <strong>ITGC Testing, SOC, SOX 404, Process Evaluation</strong>
+            </div>
+
+            <div class="info">
+                <small>Industries</small>
+                <strong>Healthcare • Payroll Systems • Technology</strong>
+            </div>
+
+            <div class="info">
+                <small>Career Direction</small>
+                <strong>Product, Strategy & Analytics Roles</strong>
+            </div>
+
+            <div class="info">
+                <small>Strengths</small>
+                <strong>Analytical Thinking • Stakeholder Management • Problem Solving</strong>
+            </div>
+        </div>
+    </section>
+
+    <div class="grid">
+
+        <section class="section glass">
+            <h2>Experience</h2>
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <h3>IT Audit Professional</h3>
+                    <span>Healthcare & Payroll Systems</span>
+
+                    <p>
+                        Worked across the audit lifecycle including walkthroughs, control testing, issue documentation, reporting, and remediation follow-ups. Conducted ITGC and application control testing aligned with SOX 404, SOC 1, and SOC 2 standards.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Cross-Functional Collaboration</h3>
+                    <span>Risk, Compliance & Operations</span>
+
+                    <p>
+                        Collaborated with stakeholders to evaluate process effectiveness, identify control gaps, and support operational improvements through structured risk assessment and documentation practices.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="section glass">
+            <h2>Education & Learning</h2>
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <h3>Advanced Product Management Training</h3>
+                    <span>Indian School of Business (ISB), Hyderabad</span>
+
+                    <p>
+                        Built understanding of product strategy, customer-centric thinking, prioritization frameworks, market analysis, and business growth concepts.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Continuous Upskilling</h3>
+                    <span>Technology • Analytics • Business Systems</span>
+
+                    <p>
+                        Exploring AI systems, RAG architecture fundamentals, data-driven decision making, and modern digital product ecosystems.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="section glass">
+            <h2>Core Skills</h2>
+
+            <div class="skills">
+                <div class="skill">IT General Controls (ITGC)</div>
+                <div class="skill">SOX 404</div>
+                <div class="skill">SOC 1 & SOC 2</div>
+                <div class="skill">Risk Assessment</div>
+                <div class="skill">Application Controls</div>
+                <div class="skill">Business Analysis</div>
+                <div class="skill">Product Thinking</div>
+                <div class="skill">Stakeholder Management</div>
+                <div class="skill">Process Improvement</div>
+                <div class="skill">Data Interpretation</div>
+                <div class="skill">Documentation</div>
+                <div class="skill">Analytical Problem Solving</div>
+            </div>
+        </section>
+
+        <section class="section glass">
+            <h2>Professional Edge</h2>
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <h3>Audit + Product Blend</h3>
+                    <p>
+                        Combines structured risk analysis with user-centric business thinking — enabling both operational rigor and strategic adaptability.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Technology-Oriented Mindset</h3>
+                    <p>
+                        Comfortable understanding modern systems, compliance environments, and emerging AI-driven workflows.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Transition-Ready Profile</h3>
+                    <p>
+                        Building a career path toward product, analytics, and business transformation opportunities across industries.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <div class="footer">
+        Designed as a futuristic interactive resume • HTML + CSS + JavaScript Single File
+    </div>
+
+</div>
+
+<script>
+function downloadResume(){
+    const element = document.documentElement.outerHTML;
+    const blob = new Blob([element], {type: 'text/html'});
+    const link = document.createElement('a');
+
+    link.href = URL.createObjectURL(blob);
+    link.download = 'Karthik_Sharma_Futuristic_Resume.html';
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+
+document.addEventListener('mousemove', (e) => {
+    const cards = document.querySelectorAll('.glass');
+
+    cards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        card.style.background = `
+            radial-gradient(
+                circle at ${x}px ${y}px,
+                rgba(255,255,255,0.08),
+                rgba(255,255,255,0.04)
+            )
+        `;
+    });
+});
+</script>
+
+</body>
+</html>
